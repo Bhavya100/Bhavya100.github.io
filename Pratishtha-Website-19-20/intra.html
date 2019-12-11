@@ -38,7 +38,9 @@
 	  
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
 	    <div class="container">
-	      <a href="index.html"><img src="img/sakec_logo.png" style="width: 50%;"></a>
+			<a class="navbar-brand" href="#">
+				<img src="img/sakec_logo.png" width="70px" height="70px" alt="">
+			  </a>
 	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
@@ -47,17 +49,29 @@
 	        <ul class="navbar-nav nav ml-auto">
 	          <li class="nav-item"><a href="index.html" class="nav-link"><span>Home</span></a></li>
 	          <li class="nav-item"><a href="about.html" class="nav-link"><span>About</span></a></li>
-              <li class="nav-item"><a href="council.html" class="nav-link"><span>Council</span></a></li>
-              <li class="nav-item"><a href="#" class="nav-link"><span>Pratishtha</span></a><ul class="dropdown"><li><a href="nucleus.html">Nucleus</a></li><li>Olympus <ul class="dropdown"><li><a href="inter.html">Inter-Sports</a></li><li><a href="intra.html">Intra-Sports</a></li><li><a href="cyclathon_marathon.html">Cyclathon & Marathon</a></li><li><a href="points.html">Overall Points</a></li></ul></li><li><a href="verve.html">Verve</a></li></ul></li>
-              <!-- <li class="nav-item"><a href="nucleus.html" class="nav-link"><span>Nucleus</span></a></li> -->
-              <!-- <li class="nav-item"><a href="#" class="nav-link"><span>Olympus</span></a><ul class="dropdown"><li><a href="inter.html">Inter-Sports</a></li><li><a href="intra.html">Intra-Sports</a></li></ul></li> -->
+						<li class="nav-item"><a href="council.html" class="nav-link"><span>Council</span></a></li>
+						<li class="nav-item dropdown ">
+							<a href="#" class="nav-link">
+							  <span>Pratishtha</span></a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="margin: -5px;">
+							  <a class="dropdown-item" href="nucleus.html">Nucleus</a>
+							  
+							  <a class="dropdown-item" href="olympus.html">Olympus</a>
+								
+							  
+							  <a class="dropdown-item" href="verve.html">Verve</a>
+							</div>
+						  </li>
+						<!--<li class="nav-item"><a href="#" class="nav-link"><span>Pratishtha</span></a><ul class="dropdown"><li><a href="nucleus.html">Nucleus</a></li><li>Olympus <ul class="dropdown"><li><a href="inter.html">Inter-Sports</a></li><li><a href="intra.html">Intra-Sports</a></li><li><a href="cyclathon_marathon.html">Cyclathon & Marathon</a></li><li><a href="points.html">Overall Points</a></li></ul></li><li><a href="verve.html">Verve</a></li></ul></li>
+						<!-- <li class="nav-item"><a href="nucleus.html" class="nav-link"><span>Nucleus</span></a></li> -->
+						<!-- <li class="nav-item"><a href="#" class="nav-link"><span>Olympus</span></a><ul class="dropdown"><li><a href="inter.html">Inter-Sports</a></li><li><a href="intra.html">Intra-Sports</a></li></ul></li> -->
 	          <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target=".trustModal">Trust Board</a></li>
 	          <li class="nav-item"><a href="calendar.html" class="nav-link"><span>Events Calendar</span></a></li>
 	          <li class="nav-item"><a href="contact.html" class="nav-link"><span>Contact Us</span></a></li>
 	        </ul>
 	      </div>
 	    </div>
-	  </nav>
+	  </nav>   
 	<!---- <section class="hero-wrap js-fullheight">
       <div class="overlay"></div>
       <div class="container">
@@ -107,10 +121,10 @@
             <div class="text text-center"><h3 style="font-size: 3rem; letter-spacing: 2px;" ><b>INTRA - SPORTS</b></h3></div><br>
             <div class="row">
                 <div class="col-md-4 text-center d-flex ftco-animate">
-                <a href="#" class="services-1 shadow">
-                    <span class="icon">
+                <a href="events/cricket.html" class="services-1 shadow">
+                   <!-- <span class="icon">
                         <img src="games/cricket.jpg" style="width:100%; height:10%0px; background-repeat: no-repeat; "  ></img>
-                    </span>
+                    </span> -->
                     <div class="desc">
                         <h3 class="mb-5" style="font-size: 2em; font-weight: 300;">Cricket</h3>
                         <p>Boys</p>
@@ -119,9 +133,7 @@
             </div>
             <div class="col-md-4 text-center d-flex ftco-animate">
                     <a href="events/index.html" class="services-1 shadow">
-                        <span class="icon">
-                            <img src="games/foot.jpg" style="width:100%;height:100%"></img>
-                        </span>
+                       
                         <div class="desc">
                             <h3 class="mb-5" style="font-size: 2em; font-weight: 300;">Football</h3>
                             <p>Boys</p>
@@ -129,10 +141,8 @@
                     </a>
                 </div>
                 <div class="col-md-4 text-center d-flex ftco-animate">
-                    <a href="#" class="services-1 shadow">
-                        <span class="icon">
-                            <img src="games/bb.jpg" style="width:100%;height:100%"></img>
-                        </span>
+                    <a href="events/basketball.html" class="services-1 shadow">
+                       
                         <div class="desc">
                             <h3 class="mb-5" style="font-size: 2em; font-weight: 300;">Basketball</h3>
                             <p>Boys & Girls</p>
@@ -140,10 +150,8 @@
                     </a>
                 </div>
                 <div class="col-md-4 text-center d-flex ftco-animate">
-                    <a href="#" class="services-1 shadow">
-                        <span class="icon">
-                            <img src="games/vb.jpg" style="width:100%;height:100%"></img>
-                        </span>
+                    <a href="events/volleyball.html" class="services-1 shadow">
+                        
                         <div class="desc">
                             <h3 class="mb-5 "style="font-size: 2em; font-weight: 300;">Volleyball</h3>
                             <p>Boys</p>
@@ -151,10 +159,8 @@
                     </a>
                 </div>
                 <div class="col-md-4 text-center d-flex ftco-animate">
-                    <a href="#" class="services-1 shadow">
-                        <span class="icon">
-                            <img src="games/tb.jpg" style="width:100%;height:100%"></img>
-                        </span>
+                    <a href="events/throwball.html" class="services-1 shadow">
+                        
                         <div class="desc">
                             <h3 class="mb-5 "style="font-size: 2em; font-weight: 300;">Throwball</h3>
                             <p>Girls</p>
@@ -162,10 +168,8 @@
                     </a>
                 </div>
                 <div class="col-md-4 text-center d-flex ftco-animate">
-                    <a href="#" class="services-1 shadow">
-                        <span class="icon">
-                            <img src="games/doge.jpg" style="width:100%;height:100%"></img>
-                        </span>
+                    <a href="events/dogeball.html" class="services-1 shadow">
+                        
                         <div class="desc">
                             <h3 class="mb-5" style="font-size: 2em; font-weight: 300;">Dodgeball</h3>
                             <p>Girls</p>
@@ -173,10 +177,8 @@
                     </a>
                 </div>
                 <div class="col-md-4 text-center d-flex ftco-animate">
-                    <a href="#" class="services-1 shadow">
-                        <span class="icon">
-                            <img src="games/kab.jpg" style="width:100%;height:100%"></img>
-                        </span>
+                    <a href="events/kabaddi.html" class="services-1 shadow">
+                       
                         <div class="desc">
                             <h3 class="mb-5" style="font-size: 2em; font-weight: 300;">Kabaddi</h3>
                             <p>Boys</p>
@@ -184,10 +186,8 @@
                     </a>
                 </div>
                 <div class="col-md-4 text-center d-flex ftco-animate">
-                    <a href="#" class="services-1 shadow">
-                        <span class="icon">
-                            <img src="games/tt.jpg" style="width:100%;height:100%"></img>
-                        </span>
+                    <a href="events/tt.html" class="services-1 shadow">
+                        
                         <div class="desc">
                             <h3 class="mb-5" style="font-size: 2em; font-weight: 300;">Table Tennis</h3>
                             <p>Boys & Girls</p>
@@ -195,10 +195,8 @@
                     </a>
                 </div>
                 <div class="col-md-4 text-center d-flex ftco-animate">
-                    <a href="#" class="services-1 shadow">
-                        <span class="icon">
-                            <img src="games/bad.jpg" style="width:100%;height:100%"></img>
-                        </span>
+                    <a href="events/badmintion.html" class="services-1 shadow">
+                        
                         <div class="desc">
                             <h3 class="mb-5" style="font-size: 2em; font-weight: 300;">Badmintion</h3>
                             <p>Boys & Girls</p>
@@ -206,10 +204,8 @@
                     </a>
                 </div>
                 <div class="col-md-4 text-center d-flex ftco-animate">
-                  <a href="#" class="services-1 shadow">
-                      <span class="icon">
-                          <img src="games/cricket.jpg" style="width:100%;height:100%"></img>
-                      </span>
+                  <a href="events/box.html" class="services-1 shadow">
+                     
                       <div class="desc">
                           <h3 class="mb-5" style="font-size: 2em; font-weight: 300;">Box Cricket</h3>
                           <p>Girls</p>
@@ -217,10 +213,8 @@
                   </a>
               </div>
               <div class="col-md-4 text-center d-flex ftco-animate">
-                <a href="#" class="services-1 shadow">
-                    <span class="icon">
-                        <img src="games/tow.jpg" style="width:100%;height:100%"></img>
-                    </span>
+                <a href="events/tow.html" class="services-1 shadow">
+                   
                     <div class="desc">
                         <h3 class="mb-5" style="font-size: 2em; font-weight: 300;">Tug Of War</h3>
                         <p>Boys & Girls</p>
@@ -228,10 +222,8 @@
                 </a>
             </div>
             <div class="col-md-4 text-center d-flex ftco-animate">
-              <a href="#" class="services-1 shadow">
-                  <span class="icon">
-                      <img src="games/chess.jpg" style="width:100%;height:100%"></img>
-                  </span>
+              <a href="events/chess.html" class="services-1 shadow">
+                  
                   <div class="desc">
                       <h3 class="mb-5" style="font-size: 2em; font-weight: 300;">Chess</h3>
                       <p>Boys & Girls</p>
@@ -239,10 +231,8 @@
               </a>
           </div>
           <div class="col-md-4 text-center d-flex ftco-animate">
-            <a href="#" class="services-1 shadow">
-                <span class="icon">
-                    <img src="games/car.jpg" style="width:100%;height:100%"></img>
-                </span>
+            <a href="events/carrom.html" class="services-1 shadow">
+               
                 <div class="desc">
                     <h3 class="mb-5" style="font-size: 2em; font-weight: 300;">Carrom</h3>
                     <p>Boys & Girls</p>
@@ -250,10 +240,8 @@
             </a>
         </div>
         <div class="col-md-4 text-center d-flex ftco-animate">
-          <a href="#" class="services-1 shadow">
-              <span class="icon">
-                  <img src="games/at.jpg" style="width:100%;height:100%"></img>
-              </span>
+          <a href="events/athletic.html" class="services-1 shadow">
+             
               <div class="desc">
                   <h3 class="mb-5" style="font-size: 2em; font-weight: 300;">Athletics Events</h3>
                   <p>Boys & Girls</p>
