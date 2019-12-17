@@ -13,6 +13,16 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="assets/css/main.css" />
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71546305-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-71546305-5');
+    </script>
+
 </head>
 
 <body class="is-preload">
@@ -23,14 +33,14 @@
         <!-- Intro -->
         <section class="intro">
             <header>
-                <h1>Table Tennis (Singles)</h1>
-                <p>Table tennis, also known as ping-pong, is a sport in which two or four players hit a lightweight ball back and forth across a table using small rackets. The game takes place on a hard table divided by a net.</p>
+                <h1>Carrom (Doubles)</h1>
+                <p>Carrom (also spelled carom) is a cue sport-based tabletop game of Indian origin. </p>
                 <ul class="actions">
                     <li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
                 </ul>
             </header>
             <div class="content">
-                <span class="image fill" data-position="center"><img src="games/tt.jpg" alt="" /></span>
+                <span class="image fill" data-position="center"><img src="games/carrom.jpg" alt="" /></span>
             </div>
         </section>
 

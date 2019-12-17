@@ -13,6 +13,16 @@
     <meta name="description" content="" />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="assets/css/main.css" />
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-71546305-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-71546305-5');
+    </script>
+
 </head>
 
 <body class="is-preload">
@@ -64,89 +74,31 @@
                     <h2>Points Table</h2>
                 </header>
                 <div class="content">
-                    
+
                     <div class="table-wrapper">
                         <table class="alt">
                             <thead>
                                 <tr>
                                     <th><strong>Team</strong></th>
-                                    
+
                                     <th><strong>Points</strong></th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>FE Comps</td>
-                                    <td>10</td>
-                                </tr>
-                                <tr>
-                                    <td>FE IT</td>
-                                    <td>40</td>
-                                </tr>
-                                <tr>
-                                    <td>FE Extc</td>
-                                    <td>80</td>
-                                </tr>
-                                <tr>
-                                        <td>FE Eletronics</td>
-                                        <td>80</td>
-                                </tr>
-                                <tr>
-                                        <td>SE Comps</td>
-                                        <td>10</td>
-                                    </tr>
-                                    <tr>
-                                        <td>SE IT</td>
-                                        <td>40</td>
-                                    </tr>
-                                    <tr>
-                                        <td>SE Extc</td>
-                                        <td>80</td>
-                                    </tr>
-                                    <tr>
-                                            <td>SE Eletronics</td>
-                                            <td>80</td>
-                                    </tr>
-                                    <tr>
-                                            <td>TEComps</td>
-                                            <td>10</td>
-                                        </tr>
-                                        <tr>
-                                            <td>TE IT</td>
-                                            <td>40</td>
-                                        </tr>
-                                        <tr>
-                                            <td>TE Extc</td>
-                                            <td>80</td>
-                                        </tr>
-                                        <tr>
-                                                <td>TE Eletronics</td>
-                                                <td>80</td>
-                                        </tr>
-                                        <tr>
-                                                <td>BE Comps</td>
-                                                <td>10</td>
-                                            </tr>
-                                            <tr>
-                                                <td>BE IT</td>
-                                                <td>40</td>
-                                            </tr>
-                                            <tr>
-                                                <td>BE Extc</td>
-                                                <td>80</td>
-                                            </tr>
-                                            <tr>
-                                                    <td>BE Eletronics</td>
-                                                    <td>80</td>
-                                            </tr>
-                                            <tr>
-                                                    <td>Council</td>
-                                                    <td>80</td>
-                                            </tr>
-                                
-                                
+                              <tr>
+                                <?php
+        												include '../admin/includes/connect.php';
+        $q="select b.class,b.carrom+g.carrom as t from olympus_points_b b,olympus_points_g g where b.class=g.class order by t DESC";
+        $r=mysqli_query($conn,$q);
+        while($row=mysqli_fetch_array($r))
+        {
+        												 ?>
+        												<td><?php echo $row['class']; ?></td>
+        												<td><?php echo $row['t'] ?></td>
+        											</tr>
+        <?php } ?>
                             </tbody>
-                            
+
                         </table>
                     </div>
 

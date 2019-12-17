@@ -12,6 +12,16 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<link rel="stylesheet" href="assets/css/main.css"/>
+
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-71546305-5"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-71546305-5');
+		</script>
+
 	</head>
 	<body class="is-preload">
 
@@ -21,14 +31,14 @@
 				<!-- Intro -->
 					<section class="intro">
 						<header>
-                            <h1>Athletic Events</h1>
-                            <p>Athletics is a collection of sporting events that involve competitive running, jumping, throwing, and walking.</p>
+							<h1>Cricket</h1>
+							<p>Cricket is a bat-and-ball game played between two teams of eleven players on a field at the centre of which is a 20-metre (22-yard) pitch with a wicket at each end, each comprising two bails balanced on three stumps.</p>
 							<ul class="actions">
 								<li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
 							</ul>
 						</header>
 						<div class="content">
-							<span class="image fill" data-position="center"><img src="games/at.jpg" alt="" /></span>
+							<span class="image fill" data-position="center"><img src="games/cricket.jpg" alt="" /></span>
 						</div>
 					</section>
 
@@ -39,7 +49,7 @@
 						</header>
 						<div class="content">
 							<p><strong>Sample Dates</strong> sit amet consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceped et lorem adipiscing.</p>
-							
+
 						</div>
 					</section>
 
@@ -58,99 +68,42 @@
 
 					<!-- Section -->
 					<section>
-						<header>
-							<h2>Points Table</h2>
-						</header>
-						<div class="content">
-							
-							<div class="table-wrapper">
-								<table class="alt">
-									<thead>
-										<tr>
-											<th><strong>Team</strong></th>
-											
-											<th><strong>Points</strong></th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>FE Comps</td>
-											<td>10</td>
-										</tr>
-										<tr>
-											<td>FE IT</td>
-											<td>40</td>
-										</tr>
-										<tr>
-											<td>FE Extc</td>
-											<td>80</td>
-										</tr>
-										<tr>
-												<td>FE Eletronics</td>
-												<td>80</td>
-										</tr>
-										<tr>
-												<td>SE Comps</td>
-												<td>10</td>
-											</tr>
+							<header>
+								<h2>Points Table</h2>
+							</header>
+							<div class="content">
+
+								<div class="table-wrapper">
+									<table class="alt">
+										<thead>
 											<tr>
-												<td>SE IT</td>
-												<td>40</td>
+												<th><strong>Team</strong></th>
+
+												<th><strong>Points</strong></th>
 											</tr>
+										</thead>
+										<tbody>
 											<tr>
-												<td>SE Extc</td>
-												<td>80</td>
+												<?php
+												include '../admin/includes/connect.php';
+$q="select class,cricket from olympus_points_b order by cricket DESC";
+$r=mysqli_query($conn,$q);
+while($row=mysqli_fetch_array($r))
+{
+												 ?>
+												<td><?php echo $row['class']; ?></td>
+												<td><?php echo $row['cricket'] ?></td>
 											</tr>
-											<tr>
-													<td>SE Eletronics</td>
-													<td>80</td>
-											</tr>
-											<tr>
-													<td>TEComps</td>
-													<td>10</td>
-												</tr>
-												<tr>
-													<td>TE IT</td>
-													<td>40</td>
-												</tr>
-												<tr>
-													<td>TE Extc</td>
-													<td>80</td>
-												</tr>
-												<tr>
-														<td>TE Eletronics</td>
-														<td>80</td>
-												</tr>
-												<tr>
-														<td>BE Comps</td>
-														<td>10</td>
-													</tr>
-													<tr>
-														<td>BE IT</td>
-														<td>40</td>
-													</tr>
-													<tr>
-														<td>BE Extc</td>
-														<td>80</td>
-													</tr>
-													<tr>
-															<td>BE Eletronics</td>
-															<td>80</td>
-													</tr>
-													<tr>
-															<td>Council</td>
-															<td>80</td>
-													</tr>
-										
-										
-									</tbody>
-									
-								</table>
+<?php } ?>
+
+										</tbody>
+
+									</table>
+								</div>
+
+
 							</div>
-
-
-						</div>
-					</section>
+						</section>
 
 				<!-- Section -->
 				<section>
@@ -166,25 +119,25 @@
 								<thead>
 									<tr>
 										<th>Position</th>
-								
+
 										<th>Prizes</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
 										<td>1st</td>
-										
+
 										<td>1000/-</td>
 									</tr>
 									<tr>
 										<td>2nd</td>
-										
+
 										<td>4000/-</td>
 									</tr>
-									
-									
+
+
 								</tbody>
-								
+
 							</table>
 						</div>
 
@@ -214,19 +167,19 @@
 						<p><strong>Sample text</strong> sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.</p>
 						<ul class="actions">
 							<li><a href="#" class="button primary large">Register</a></li>
-							<li><a href="#" class="button large">Brochure</a></li> 
+							<li><a href="#" class="button large">Brochure</a></li>
 						</ul>
 					</div>
 				</section>
 
 
 
-							
 
-				
+
+
 				<!-- Copyright -->
 
-				
+
 
 					<div class="copyright">&copy; Untitled. All rights reserved. Design: <a href="#">By Krutik Patel</a>.</div>
 
