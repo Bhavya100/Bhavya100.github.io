@@ -139,7 +139,7 @@ p {
 }
 .navbar-brand em {
 	font-style: normal;
-	color: #f7c552;
+	color: blue;
 	font-size: 32px;
 }
 .header.active .navbar-brand {
@@ -167,7 +167,7 @@ p {
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
 	background-color: #f7c552;
 }
-bootstrap.min.css:5
+bootstrap.min.css
 .navbar-toggle {
     position: relative;
     float: right;
@@ -304,7 +304,7 @@ bootstrap.min.css:5
 	padding: 30px 15px 0px 15px;
 }
 
-.filter-categories {;
+.filter-categories {
   margin-top: 60px;
 }
 
@@ -659,7 +659,7 @@ footer {
 footer .logo em {
 	font-style: normal;
 	font-size: 28px;
-	color: #f7c552;
+	color: blue;
 }
 footer .logo-ft {
 	display: inline-block;
@@ -683,7 +683,7 @@ footer .logo p {
 
 footer .logo span {
 	font-weight: 600;
-	color: #f7c552;
+	color: blue;
 }
 
 footer .logo a {
