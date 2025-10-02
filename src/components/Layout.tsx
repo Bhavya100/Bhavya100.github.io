@@ -1,6 +1,5 @@
 import Sidebar from "./sidebar";
 import Editor from "./editor";
-import Terminal from "./terminal";
 import RightPanel from "./rightPanel";
 
 export default function Layout() {
@@ -19,11 +18,6 @@ export default function Layout() {
       {/* Right Panel */}
       <div>
         <RightPanel />
-      </div>
-
-      {/* Terminal (spans middle + right columns) */}
-      <div className="border-t border-gray-700 col-start-2 col-end-3">
-        <Terminal />
       </div>
     </div>
   );
