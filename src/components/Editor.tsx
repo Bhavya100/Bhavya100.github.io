@@ -5,10 +5,10 @@ export default function Editor() {
     <div className="flex flex-col h-full">
       {/* Editor main content */}
       <div className="flex-1 p-4 overflow-auto">
-        <h2 className="font-bold mb-4 text-lg">Editor</h2>
-        <div className="bg-blue-500 flex items-center justify-center h-full rounded-lg">
-          Tailwind is working 🚀
-        </div>
+        <h1 className="text-2xl font-bold text-blue-400">Welcome to My Portfolio</h1>
+        <p className="mt-2 text-gray-300">
+            Click on a file in the sidebar to open it here.
+      </p>
       </div>
 
       {/* Terminal inside editor */}
