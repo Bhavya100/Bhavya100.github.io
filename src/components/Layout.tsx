@@ -1,6 +1,6 @@
-import Sidebar from "./sidebar";
-import Editor from "./editor";
-import RightPanel from "./rightPanel";
+import Sidebar from "./Sidebar";
+import Editor from "./Editor";
+import RightPanel from "./RightPanel";
 
 export default function Layout() {
   return (
