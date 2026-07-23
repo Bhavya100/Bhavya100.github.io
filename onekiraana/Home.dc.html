@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>One Kiraana — Banao Khudka Brand</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@500;600;700;800&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FBF6EA;color:#2B1D10;font-family:'Mukta',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#0B5192}a:hover{color:#C06A00}
+input::placeholder{color:#9A8A6E}
+@keyframes okPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+@keyframes okFadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+
+<div data-screen-label="Nav" style="position:sticky;top:0;z-index:60;background:rgba(251,246,234,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,29,16,.1)">
+  <div style="max-width:1120px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:12px">
+    <button onClick="{{ toggleMenu }}" aria-label="Menu kholo" style="display:flex;flex-direction:column;justify-content:center;gap:5px;background:none;border:1px solid rgba(43,29,16,.2);border-radius:10px;padding:0 12px;height:46px;cursor:pointer">
+      <span style="display:block;width:20px;height:2px;background:#2B1D10"></span>
+      <span style="display:block;width:14px;height:2px;background:#2B1D10"></span>
+      <span style="display:block;width:20px;height:2px;background:#2B1D10"></span>
+    </button>
+    <a href="Home.dc.html" style="display:flex;align-items:center;text-decoration:none">
+      <img src="./assets/onekiraana-logo.png" alt="One Kiraana" style="height:44px;width:auto;display:block">
+    </a>
+    <div style="flex:1"></div>
+    <a href="{{ waLink }}" target="_blank" style="display:inline-flex;align-items:center;gap:9px;background:#0B5192;color:#FFFFFF;font-weight:700;font-size:15.5px;padding:0 20px;height:46px;border-radius:999px;text-decoration:none;white-space:nowrap" style-hover="background:#083A6B;color:#FFFFFF">
+      <svg width="19" height="19" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="15" r="11" fill="#FFFFFF"></circle><path d="M8 19.5 L5.5 27 L13 24.4 Z" fill="#FFFFFF"></path><path d="M11.9 10.9c-1.4 1.3-1.2 3.4.4 5.6 1.5 2.1 3.4 3.6 5.6 4.4 2 .7 3.5 0 4.1-1.1" fill="none" stroke="#0B5192" stroke-width="2.6" stroke-linecap="round"></path></svg>
+      WhatsApp Karo
+    </a>
+  </div>
+</div>
+
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:100;background:#0A3E70;color:#F6EDD8;display:flex;flex-direction:column;padding:12px 22px 30px;overflow:auto;animation:okFadeUp .25s ease">
+    <div style="display:flex;align-items:center;gap:12px;padding-bottom:18px">
+      <img src="https://onekiraana.com/wp-content/uploads/2023/06/Onekiraana-logo-white.png" alt="One Kiraana" style="height:42px;width:auto">
+      <div style="flex:1"></div>
+      <button onClick="{{ closeMenu }}" aria-label="Band karo" style="background:none;border:1px solid rgba(246,237,216,.4);color:#F6EDD8;border-radius:10px;width:46px;height:46px;font-size:18px;cursor:pointer">✕</button>
+    </div>
+    <div style="display:flex;flex-direction:column;max-width:640px;width:100%;margin:0 auto">
+      <a href="Home.dc.html" onClick="{{ closeMenu }}" style="display:flex;align-items:baseline;gap:14px;font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:clamp(30px,6vw,44px);color:#F6EDD8;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(246,237,216,.15)"><span style="font-size:14px;color:#FF9100;font-family:'Mukta',sans-serif;font-weight:600">01</span>Home</a>
+      <a href="Categories.dc.html" style="display:flex;align-items:baseline;gap:14px;font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:clamp(30px,6vw,44px);color:#F6EDD8;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(246,237,216,.15)"><span style="font-size:14px;color:#FF9100;font-family:'Mukta',sans-serif;font-weight:600">02</span>Product Categories</a>
+      <a href="Process.dc.html" style="display:flex;align-items:baseline;gap:14px;font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:clamp(30px,6vw,44px);color:#F6EDD8;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(246,237,216,.15)"><span style="font-size:14px;color:#FF9100;font-family:'Mukta',sans-serif;font-weight:600">03</span>Our Process</a>
+      <a href="About.dc.html" style="display:flex;align-items:baseline;gap:14px;font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:clamp(30px,6vw,44px);color:#F6EDD8;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(246,237,216,.15)"><span style="font-size:14px;color:#FF9100;font-family:'Mukta',sans-serif;font-weight:600">04</span>About</a>
+      <a href="Contact.dc.html" style="display:flex;align-items:baseline;gap:14px;font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:clamp(30px,6vw,44px);color:#F6EDD8;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(246,237,216,.15)"><span style="font-size:14px;color:#FF9100;font-family:'Mukta',sans-serif;font-weight:600">05</span>Contact</a>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:26px">
+        <a href="{{ waLink }}" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#072E54;font-weight:700;font-size:16px;padding:0 24px;height:52px;border-radius:999px;text-decoration:none" style-hover="background:#3FE07A;color:#072E54">WhatsApp Karo</a>
+        <a href="{{ telLink }}" style="display:inline-flex;align-items:center;gap:10px;background:none;border:1.5px solid rgba(246,237,216,.5);color:#F6EDD8;font-weight:700;font-size:16px;padding:0 24px;height:52px;border-radius:999px;text-decoration:none" style-hover="border-color:#FF9100;color:#FF9100">Call Karo</a>
+      </div>
+      <div style="margin-top:30px;font-size:13.5px;line-height:1.7;color:rgba(246,237,216,.6)">N-24, APMC Market 2, Phase 2, Danabunder, Sector 19C, Vashi, Navi Mumbai – 400703<br>sales@onekiraana.com · hr@onekiraana.com</div>
+    </div>
+  </div>
+</sc-if>
+
+<div data-screen-label="Hero" style="background:linear-gradient(180deg,#FBF6EA 0%,#F5EBD4 100%);border-bottom:1px solid rgba(43,29,16,.08)">
+  <div style="max-width:1120px;margin:0 auto;padding:clamp(40px,7vw,80px) 20px 0;display:flex;flex-wrap:wrap;align-items:center;gap:36px">
+    <div style="flex:1 1 340px;min-width:290px;padding-bottom:clamp(30px,5vw,70px)">
+      <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,145,0,.16);border:1px solid rgba(192,106,0,.35);color:#8F5300;border-radius:999px;padding:7px 14px;font-family:'Anek Devanagari',sans-serif;font-weight:600;font-size:15px">किसी और का ब्रांड क्यों बेचना?</div>
+      <h1 style="font-family:'Anek Devanagari',sans-serif;font-weight:800;font-size:clamp(48px,9vw,92px);line-height:1;color:#0B5192;margin:18px 0 0;letter-spacing:-.01em">Banao<br>Khudka<br>Brand<span style="color:#FF9100">.</span></h1>
+      <p style="font-size:clamp(17px,2.2vw,19.5px);line-height:1.6;color:#4A3A28;margin:18px 0 0;max-width:46ch;text-wrap:pretty">Apni dukaan ka apna naam — rice, dal, atta, masale, sab <strong>aapke brand mein</strong>. Hum source, clean, pack aur label karte hain. Aap sirf bechte ho.</p>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:26px">
+        <a href="{{ waLink }}" target="_blank" style="display:inline-flex;align-items:center;gap:11px;background:#0B5192;color:#FFFFFF;font-weight:700;font-size:18px;padding:0 30px;height:56px;border-radius:999px;text-decoration:none;box-shadow:0 10px 24px -8px rgba(23,143,70,.55)" style-hover="background:#083A6B;color:#FFFFFF;transform:translateY(-1px)">
+          <svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="15" r="11" fill="#FFFFFF"></circle><path d="M8 19.5 L5.5 27 L13 24.4 Z" fill="#FFFFFF"></path><path d="M11.9 10.9c-1.4 1.3-1.2 3.4.4 5.6 1.5 2.1 3.4 3.6 5.6 4.4 2 .7 3.5 0 4.1-1.1" fill="none" stroke="#0B5192" stroke-width="2.6" stroke-linecap="round"></path></svg>
+          WhatsApp Karo
+        </a>
+        <a href="#kaise" style="font-weight:600;font-size:17px;color:#0B5192;text-decoration:underline;text-underline-offset:5px;padding:10px 4px">Dekho kaise ↓</a>
+      </div>
+      <div style="margin-top:26px;font-size:13.5px;font-weight:600;letter-spacing:.04em;color:#7A6A52">FSSAI-COMPLIANT UNITS &nbsp;·&nbsp; APMC VASHI &nbsp;·&nbsp; MOQ SIRF 30 KG</div>
+    </div>
+    <div style="flex:1 1 380px;min-width:300px;display:flex;flex-direction:column;gap:16px;align-items:center;align-self:flex-end;padding-bottom:0">
+      <div style="position:relative;width:100%;max-width:540px;padding-top:16px">
+        <div style="position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:88%;height:210px;background:radial-gradient(closest-side,rgba(255,145,0,.3),transparent 72%)"></div>
+        <div style="position:relative;display:flex;align-items:flex-end;justify-content:center;gap:clamp(10px,2vw,20px)">
+          <div style="width:clamp(112px,12vw,160px);transform:translateY(0)">
+            <div style="border-radius:10px 10px 16px 16px;background:linear-gradient(165deg,#F2B13C 0%,#D9910F 55%,#B4770A 100%);padding:9px 9px 12px;display:flex;flex-direction:column;gap:7px;box-shadow:0 22px 30px -14px rgba(43,29,16,.5),inset 0 1px 0 rgba(255,255,255,.35)">
+              <div style="height:9px;border-radius:5px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.45) 0 5px,rgba(120,80,10,.3) 5px 10px)"></div>
+              <div style="height:46px;border-radius:8px;background-color:#EADCB4;background-image:radial-gradient(3px 6px at 12px 10px,#F8F0DC 55%,transparent 56%),radial-gradient(3px 6px at 34px 24px,#F8F0DC 55%,transparent 56%),radial-gradient(3px 6px at 20px 34px,#D9C48F 55%,transparent 56%),radial-gradient(3px 6px at 44px 10px,#D9C48F 55%,transparent 56%);background-size:52px 44px;box-shadow:inset 0 2px 6px rgba(43,29,16,.25)"></div>
+              <div style="background:#FBF6EA;border-radius:8px;padding:9px 6px 10px;text-align:center;display:flex;flex-direction:column;gap:3px;align-items:center">
+                <div style="width:8px;height:8px;background:#B87B00;transform:rotate(45deg)"></div>
+                <div style="font-family:'Anek Devanagari',sans-serif;font-weight:800;font-size:12.5px;color:#8F5300;line-height:1.15">MAHALAXMI<br>STORES</div>
+                <div style="width:26px;height:1px;background:rgba(43,29,16,.25)"></div>
+                <div style="font-size:11.5px;font-weight:600;color:#2B1D10;line-height:1.2">Kolam Rice</div>
+                <div style="font-size:10px;color:#7A6A52;line-height:1.1">5 kg · Apni MRP</div>
+              </div>
+            </div>
+          </div>
+          <div style="width:clamp(136px,15vw,192px);position:relative;z-index:2">
+            <div style="border-radius:11px 11px 18px 18px;background:linear-gradient(165deg,#2E7A48 0%,#1F5231 55%,#153823 100%);padding:10px 10px 14px;display:flex;flex-direction:column;gap:8px;box-shadow:0 26px 34px -14px rgba(43,29,16,.55),inset 0 1px 0 rgba(255,255,255,.3)">
+              <div style="height:10px;border-radius:5px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.4) 0 5px,rgba(10,40,20,.35) 5px 10px)"></div>
+              <div style="height:58px;border-radius:8px;background-color:#EADCB4;background-image:radial-gradient(3px 6px at 12px 10px,#F8F0DC 55%,transparent 56%),radial-gradient(3px 6px at 34px 24px,#F8F0DC 55%,transparent 56%),radial-gradient(3px 6px at 20px 34px,#D9C48F 55%,transparent 56%),radial-gradient(3px 6px at 44px 10px,#D9C48F 55%,transparent 56%);background-size:52px 44px;box-shadow:inset 0 2px 6px rgba(43,29,16,.25)"></div>
+              <div style="background:#FBF6EA;border-radius:8px;padding:11px 8px 12px;text-align:center;display:flex;flex-direction:column;gap:3px;align-items:center">
+                <div style="width:9px;height:9px;border-radius:50%;background:#1F5231"></div>
+                <div style="font-family:'Anek Devanagari',sans-serif;font-weight:800;font-size:14.5px;color:#1F5231;line-height:1.15">SHARMA<br>&amp; SONS</div>
+                <div style="width:28px;height:1px;background:rgba(43,29,16,.25)"></div>
+                <div style="font-size:12.5px;font-weight:600;color:#2B1D10;line-height:1.2">Kolam Rice</div>
+                <div style="font-size:10.5px;color:#7A6A52;line-height:1.1">5 kg · Apni MRP</div>
+              </div>
+            </div>
+          </div>
+          <div style="width:clamp(112px,12vw,160px);transform:translateY(2px)">
+            <div style="border-radius:10px 10px 16px 16px;background:linear-gradient(165deg,#C14A2B 0%,#8E2F17 55%,#6E2411 100%);padding:9px 9px 12px;display:flex;flex-direction:column;gap:7px;box-shadow:0 22px 30px -14px rgba(43,29,16,.5),inset 0 1px 0 rgba(255,255,255,.3)">
+              <div style="height:9px;border-radius:5px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.4) 0 5px,rgba(70,20,8,.35) 5px 10px)"></div>
+              <div style="height:46px;border-radius:8px;background-color:#EADCB4;background-image:radial-gradient(3px 6px at 12px 10px,#F8F0DC 55%,transparent 56%),radial-gradient(3px 6px at 34px 24px,#F8F0DC 55%,transparent 56%),radial-gradient(3px 6px at 20px 34px,#D9C48F 55%,transparent 56%),radial-gradient(3px 6px at 44px 10px,#D9C48F 55%,transparent 56%);background-size:52px 44px;box-shadow:inset 0 2px 6px rgba(43,29,16,.25)"></div>
+              <div style="background:#FBF6EA;border-radius:8px;padding:9px 6px 10px;text-align:center;display:flex;flex-direction:column;gap:3px;align-items:center">
+                <div style="width:8px;height:8px;border-radius:2px;background:#8E2F17"></div>
+                <div style="font-family:'Anek Devanagari',sans-serif;font-weight:800;font-size:12.5px;color:#8E2F17;line-height:1.15">NEW BHARAT<br>KIRANA</div>
+                <div style="width:26px;height:1px;background:rgba(43,29,16,.25)"></div>
+                <div style="font-size:11.5px;font-weight:600;color:#2B1D10;line-height:1.2">Kolam Rice</div>
+                <div style="font-size:10px;color:#7A6A52;line-height:1.1">5 kg · Apni MRP</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="position:relative;height:13px;background:linear-gradient(180deg,#DCC99B,#C0A97A);border-radius:3px;box-shadow:0 14px 26px rgba(43,29,16,.2)"></div>
+        <div style="text-align:center;font-size:14.5px;color:#7A6A52;padding:14px 0 22px">Ek hi chawal. Teen dukaanein. <strong style="color:#C06A00">Teeno ka apna brand.</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div data-screen-label="Problem" style="background:#0A3E70;color:#F6EDD8">
+  <div style="max-width:1120px;margin:0 auto;padding:clamp(56px,8vw,90px) 20px">
+    <div style="font-weight:600;font-size:13px;letter-spacing:.14em;color:#FF9100">SACH BAAT</div>
+    <h2 style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:clamp(30px,4.6vw,50px);line-height:1.12;margin:10px 0 0;max-width:22ch">Doosron ka brand bechne mein kya milta hai?</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:34px">
+      <div style="flex:1 1 250px;min-width:240px;background:rgba(246,237,216,.06);border:1px solid rgba(246,237,216,.14);border-radius:16px;padding:24px">
+        <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18" stroke="#FF9100" stroke-width="2.6" stroke-linecap="round"></path></svg>
+        <div style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:22px;margin-top:12px">Patli margin</div>
+        <div style="font-size:15.5px;line-height:1.6;color:rgba(246,237,216,.75);margin-top:6px">National brand ka rate fixed hai. Mehnat aapki, moti kamaai unki.</div>
+      </div>
+      <div style="flex:1 1 250px;min-width:240px;background:rgba(246,237,216,.06);border:1px solid rgba(246,237,216,.14);border-radius:16px;padding:24px">
+        <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18" stroke="#FF9100" stroke-width="2.6" stroke-linecap="round"></path></svg>
+        <div style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:22px;margin-top:12px">Koi pehchaan nahi</div>
+        <div style="font-size:15.5px;line-height:1.6;color:rgba(246,237,216,.75);margin-top:6px">Customer brand ka naam yaad rakhta hai — aapki dukaan ka nahi.</div>
+      </div>
+      <div style="flex:1 1 250px;min-width:240px;background:rgba(246,237,216,.06);border:1px solid rgba(246,237,216,.14);border-radius:16px;padding:24px">
+        <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6 L18 18 M18 6 L6 18" stroke="#FF9100" stroke-width="2.6" stroke-linecap="round"></path></svg>
+        <div style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:22px;margin-top:12px">Aap bas ek shelf ho</div>
+        <div style="font-size:15.5px;line-height:1.6;color:rgba(246,237,216,.75);margin-top:6px">Badi companies ke liye aapki dukaan sirf ek aur counter hai.</div>
+      </div>
+    </div>
+    <div style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:clamp(24px,3.6vw,36px);color:#FF9100;margin-top:40px;line-height:1.25;max-width:26ch">Ab apna brand banao — wahi grocery, aapke naam pe. <span style="color:#F6EDD8">↓</span></div>
+  </div>
+</div>
+
+<div data-screen-label="What we do" style="background:#FBF6EA">
+  <div style="max-width:1120px;margin:0 auto;padding:clamp(56px,8vw,90px) 20px">
+    <div style="font-weight:600;font-size:13px;letter-spacing:.14em;color:#C06A00">HUM KYA KARTE HAIN</div>
+    <h2 style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:clamp(30px,4.6vw,50px);line-height:1.12;color:#0B5192;margin:10px 0 0;max-width:24ch">Hum source, clean, pack aur label karte hain — aapke brand mein.</h2>
+    <p style="font-size:17px;line-height:1.65;color:#4A3A28;max-width:62ch;margin:16px 0 0;text-wrap:pretty">Pure India se sahi grade ka maal, Vashi &amp; Goregaon ke FSSAI-compliant units mein cleaning aur packing, aur aapke brand design ka label — seedha aapki dukaan tak, aksar agle hi din. Na packing ka jhanjhat, na godown ka bojh. Wahi commodity, <strong>aapka naam, aapki MRP.</strong></p>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(16px,4vw,44px);margin-top:44px;background:#F3E9D2;border-radius:22px;padding:34px 22px">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+        <div style="width:150px;height:140px;border-radius:14px 14px 18px 18px;background-color:#C9A86A;background-image:repeating-linear-gradient(45deg,rgba(94,66,24,.16) 0 2px,transparent 2px 7px),repeating-linear-gradient(-45deg,rgba(94,66,24,.16) 0 2px,transparent 2px 7px);border-top:3px dashed #8A6A34;box-shadow:0 16px 26px -12px rgba(43,29,16,.4);display:flex;align-items:center;justify-content:center">
+          <div style="background:rgba(251,246,234,.92);border-radius:6px;padding:8px 12px;text-align:center;font-weight:700;font-size:12px;color:#5E4218;line-height:1.4">LOOSE MAAL<br><span style="font-weight:500;color:#7A6A52">mandi ki 50 kg bori</span></div>
+        </div>
+        <div style="font-size:13.5px;color:#7A6A52">Pehle: khula ya doosre ke naam pe</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
+        <div style="font-size:12px;font-weight:600;letter-spacing:.1em;color:#C06A00">SOURCE · CLEAN · PACK · LABEL</div>
+        <div style="font-family:'Anek Devanagari',sans-serif;font-weight:800;font-size:44px;color:#C06A00;line-height:1">→</div>
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+        <div style="width:128px">
+          <div style="border-radius:10px 10px 16px 16px;background:linear-gradient(165deg,#2E7A48 0%,#1F5231 55%,#153823 100%);padding:9px 9px 12px;display:flex;flex-direction:column;gap:7px;box-shadow:0 16px 26px -12px rgba(43,29,16,.45),inset 0 1px 0 rgba(255,255,255,.3)">
+            <div style="height:9px;border-radius:5px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.4) 0 5px,rgba(10,40,20,.35) 5px 10px)"></div>
+            <div style="background:#FBF6EA;border-radius:8px;padding:10px 6px 11px;text-align:center;display:flex;flex-direction:column;gap:3px;align-items:center">
+              <div style="width:9px;height:9px;border-radius:50%;background:#1F5231"></div>
+              <div style="font-family:'Anek Devanagari',sans-serif;font-weight:800;font-size:13px;color:#1F5231;line-height:1.15">AAPKI<br>DUKAAN</div>
+              <div style="width:26px;height:1px;background:rgba(43,29,16,.25)"></div>
+              <div style="font-size:11.5px;font-weight:600;color:#2B1D10">Kolam Rice</div>
+              <div style="font-size:10px;color:#7A6A52">5 kg · Apni MRP</div>
+            </div>
+          </div>
+        </div>
+        <div style="font-size:13.5px;color:#7A6A52">Ab: <strong style="color:#0B5192">aapka apna brand</strong></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div data-screen-label="How it works" id="kaise" style="background:#F3E9D2;border-top:1px solid rgba(43,29,16,.07)">
+  <div style="max-width:1120px;margin:0 auto;padding:clamp(56px,8vw,90px) 20px">
+    <div style="font-weight:600;font-size:13px;letter-spacing:.14em;color:#C06A00">HOW IT WORKS</div>
+    <h2 style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:clamp(30px,4.6vw,50px);line-height:1.12;color:#0B5192;margin:10px 0 0">Kaise hota hai? Sirf 3 steps.</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:34px">
+      <div style="flex:1 1 260px;min-width:250px;background:#FFFDF6;border:1px solid rgba(43,29,16,.08);border-radius:18px;padding:26px;box-shadow:0 10px 26px -18px rgba(43,29,16,.35)">
+        <div style="font-family:'Anek Devanagari',sans-serif;font-weight:800;font-size:44px;color:#FF9100;line-height:1">01</div>
+        <div style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:23px;color:#0B5192;margin-top:8px">Sourcing</div>
+        <div style="font-size:15.5px;line-height:1.6;color:#4A3A28;margin-top:6px">Pure India se, sahi grade, sahi daam. 3 peedhi ka APMC network — wahi hamari taakat.</div>
+      </div>
+      <div style="flex:1 1 260px;min-width:250px;background:#FFFDF6;border:1px solid rgba(43,29,16,.08);border-radius:18px;padding:26px;box-shadow:0 10px 26px -18px rgba(43,29,16,.35)">
+        <div style="font-family:'Anek Devanagari',sans-serif;font-weight:800;font-size:44px;color:#FF9100;line-height:1">02</div>
+        <div style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:23px;color:#0B5192;margin-top:8px">Clean &amp; Pack</div>
+        <div style="font-size:15.5px;line-height:1.6;color:#4A3A28;margin-top:6px">FSSAI-compliant units mein cleaning — auto machines + hand-pick belts — phir weighing aur packing.</div>
+      </div>
+      <div style="flex:1 1 260px;min-width:250px;background:#FFFDF6;border:1px solid rgba(43,29,16,.08);border-radius:18px;padding:26px;box-shadow:0 10px 26px -18px rgba(43,29,16,.35)">
+        <div style="font-family:'Anek Devanagari',sans-serif;font-weight:800;font-size:44px;color:#FF9100;line-height:1">03</div>
+        <div style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:23px;color:#0B5192;margin-top:8px">Label &amp; Deliver</div>
+        <div style="font-size:15.5px;line-height:1.6;color:#4A3A28;margin-top:6px">Aapke brand design mein label, aur delivery aksar agle din. Dukaan pe sirf bikri baaki.</div>
+      </div>
+    </div>
+    <div style="background:#FF9100;border-radius:22px;padding:clamp(26px,4vw,40px);margin-top:22px;display:flex;flex-wrap:wrap;align-items:center;gap:22px">
+      <div style="flex:1 1 300px;min-width:270px">
+        <div style="font-family:'Anek Devanagari',sans-serif;font-weight:800;font-size:clamp(24px,3.4vw,32px);color:#2B1D10;line-height:1.15">Shuru kaise karein?</div>
+        <div style="display:flex;flex-direction:column;gap:9px;margin-top:14px">
+          <div style="display:flex;gap:11px;align-items:baseline"><span style="font-weight:800;font-family:'Anek Devanagari',sans-serif;color:#8F5300">1.</span><span style="font-size:16.5px;font-weight:600;color:#2B1D10">WhatsApp par baat karo</span></div>
+          <div style="display:flex;gap:11px;align-items:baseline"><span style="font-weight:800;font-family:'Anek Devanagari',sans-serif;color:#8F5300">2.</span><span style="font-size:16.5px;font-weight:600;color:#2B1D10">Apna brand design + products choose karo</span></div>
+          <div style="display:flex;gap:11px;align-items:baseline"><span style="font-weight:800;font-family:'Anek Devanagari',sans-serif;color:#8F5300">3.</span><span style="font-size:16.5px;font-weight:600;color:#2B1D10">Sirf 30 kg se order shuru karo</span></div>
+        </div>
+      </div>
+      <a href="{{ waLink }}" target="_blank" style="display:inline-flex;align-items:center;gap:11px;background:#0A3E70;color:#F6EDD8;font-weight:700;font-size:17.5px;padding:0 30px;height:56px;border-radius:999px;text-decoration:none" style-hover="background:#072E54;color:#FFFFFF">
+        Abhi shuru karo
+      </a>
+    </div>
+  </div>
+</div>
+
+<div data-screen-label="Why One Kiraana" style="background:#FBF6EA">
+  <div style="max-width:1120px;margin:0 auto;padding:clamp(56px,8vw,90px) 20px 0">
+    <div style="font-weight:600;font-size:13px;letter-spacing:.14em;color:#C06A00">BHAROSA</div>
+    <h2 style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:clamp(30px,4.6vw,50px);line-height:1.12;color:#0B5192;margin:10px 0 0">One Kiraana hi kyun?</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:34px">
+      <div style="flex:1 1 260px;min-width:250px;background:#FFFDF6;border:1px solid rgba(43,29,16,.08);border-radius:18px;padding:26px">
+        <div style="width:34px;height:34px;border-radius:50%;background:rgba(255,145,0,.2);display:flex;align-items:center;justify-content:center"><div style="width:11px;height:11px;background:#C06A00;transform:rotate(45deg)"></div></div>
+        <div style="font-weight:600;font-size:12.5px;letter-spacing:.1em;color:#7A6A52;margin-top:14px">PRICE EFFICIENCY</div>
+        <div style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:21px;color:#0B5192;margin-top:4px;line-height:1.3">Decades ki sourcing — sahi vendor, sahi grade, sahi price.</div>
+      </div>
+      <div style="flex:1 1 260px;min-width:250px;background:#FFFDF6;border:1px solid rgba(43,29,16,.08);border-radius:18px;padding:26px">
+        <div style="width:34px;height:34px;border-radius:50%;background:rgba(11,81,146,.14);display:flex;align-items:center;justify-content:center"><div style="width:11px;height:11px;border-radius:50%;background:#0B5192"></div></div>
+        <div style="font-weight:600;font-size:12.5px;letter-spacing:.1em;color:#7A6A52;margin-top:14px">QUALITY CONSISTENCY</div>
+        <div style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:21px;color:#0B5192;margin-top:4px;line-height:1.3">Ek hi commodity ke alag grades, poori cleaning, zero impurity.</div>
+      </div>
+      <div style="flex:1 1 260px;min-width:250px;background:#FFFDF6;border:1px solid rgba(43,29,16,.08);border-radius:18px;padding:26px">
+        <div style="width:34px;height:34px;border-radius:50%;background:rgba(142,47,23,.14);display:flex;align-items:center;justify-content:center"><div style="width:11px;height:11px;border-radius:3px;background:#8E2F17"></div></div>
+        <div style="font-weight:600;font-size:12.5px;letter-spacing:.1em;color:#7A6A52;margin-top:14px">RELATIONSHIPS</div>
+        <div style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:21px;color:#0B5192;margin-top:4px;line-height:1.3">6 decades se kiraana stores ke saath. Aapka fayda, hamari zimmedari.</div>
+      </div>
+    </div>
+  </div>
+  <div style="overflow:hidden;padding:34px 0 10px">
+    <div style="background:#FF9100;transform:rotate(-1.2deg) scale(1.02);padding:14px 20px;text-align:center;font-family:'Anek Devanagari',sans-serif;font-weight:800;font-size:clamp(16px,2.6vw,22px);color:#2B1D10;letter-spacing:.02em">MOQ sirf 30 Kg &nbsp;✦&nbsp; 100+ SKUs &nbsp;✦&nbsp; Apni MRP khud set karo &nbsp;✦&nbsp; Next-day delivery</div>
+  </div>
+</div>
+
+<div data-screen-label="Categories" style="background:#FBF6EA">
+  <div style="max-width:1120px;margin:0 auto;padding:clamp(50px,7vw,80px) 20px">
+    <div style="display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px">
+      <div style="flex:1 1 300px">
+        <div style="font-weight:600;font-size:13px;letter-spacing:.14em;color:#C06A00">PRODUCT CATEGORIES</div>
+        <h2 style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:clamp(30px,4.6vw,50px);line-height:1.12;color:#0B5192;margin:10px 0 0">Sab kuch, aapke brand mein.</h2>
+      </div>
+      <a href="Categories.dc.html" style="font-weight:600;font-size:16px;color:#0B5192;text-decoration:underline;text-underline-offset:4px;padding:8px 0">Poori list dekho →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px;margin-top:30px">
+      <a href="Categories.dc.html" style="text-decoration:none;color:#2B1D10;display:flex;flex-direction:column;gap:8px" style-hover="color:#C06A00"><div style="aspect-ratio:1;border-radius:14px;overflow:hidden"><image-slot id="home-cat-rice" shape="rect" placeholder="Rice photo"></image-slot></div><div style="line-height:1.2"><div style="font-weight:700;font-size:16px">Rice</div><div style="font-size:13px;color:#7A6A52">Chawal — Kolam, Basmati…</div></div></a>
+      <a href="Categories.dc.html" style="text-decoration:none;color:#2B1D10;display:flex;flex-direction:column;gap:8px" style-hover="color:#C06A00"><div style="aspect-ratio:1;border-radius:14px;overflow:hidden"><image-slot id="home-cat-dals" shape="rect" placeholder="Dals photo"></image-slot></div><div style="line-height:1.2"><div style="font-weight:700;font-size:16px">Dals</div><div style="font-size:13px;color:#7A6A52">Toor, Moong, Chana…</div></div></a>
+      <a href="Categories.dc.html" style="text-decoration:none;color:#2B1D10;display:flex;flex-direction:column;gap:8px" style-hover="color:#C06A00"><div style="aspect-ratio:1;border-radius:14px;overflow:hidden"><image-slot id="home-cat-flour" shape="rect" placeholder="Atta photo"></image-slot></div><div style="line-height:1.2"><div style="font-weight:700;font-size:16px">Flour</div><div style="font-size:13px;color:#7A6A52">Chakki atta, besan…</div></div></a>
+      <a href="Categories.dc.html" style="text-decoration:none;color:#2B1D10;display:flex;flex-direction:column;gap:8px" style-hover="color:#C06A00"><div style="aspect-ratio:1;border-radius:14px;overflow:hidden"><image-slot id="home-cat-cereals" shape="rect" placeholder="Cereals photo"></image-slot></div><div style="line-height:1.2"><div style="font-weight:700;font-size:16px">Cereals</div><div style="font-size:13px;color:#7A6A52">Wheat, jowar, bajra…</div></div></a>
+      <a href="Categories.dc.html" style="text-decoration:none;color:#2B1D10;display:flex;flex-direction:column;gap:8px" style-hover="color:#C06A00"><div style="aspect-ratio:1;border-radius:14px;overflow:hidden"><image-slot id="home-cat-processed" shape="rect" placeholder="Poha photo"></image-slot></div><div style="line-height:1.2"><div style="font-weight:700;font-size:16px">Processed Cereals</div><div style="font-size:13px;color:#7A6A52">Poha, daliya, rava…</div></div></a>
+      <a href="Categories.dc.html" style="text-decoration:none;color:#2B1D10;display:flex;flex-direction:column;gap:8px" style-hover="color:#C06A00"><div style="aspect-ratio:1;border-radius:14px;overflow:hidden"><image-slot id="home-cat-sugar" shape="rect" placeholder="Sugar photo"></image-slot></div><div style="line-height:1.2"><div style="font-weight:700;font-size:16px">Sugar</div><div style="font-size:13px;color:#7A6A52">Cheeni, gud, boora…</div></div></a>
+      <a href="Categories.dc.html" style="text-decoration:none;color:#2B1D10;display:flex;flex-direction:column;gap:8px" style-hover="color:#C06A00"><div style="aspect-ratio:1;border-radius:14px;overflow:hidden"><image-slot id="home-cat-upwas" shape="rect" placeholder="Upwas photo"></image-slot></div><div style="line-height:1.2"><div style="font-weight:700;font-size:16px">Upwas</div><div style="font-size:13px;color:#7A6A52">Sabudana, rajgira…</div></div></a>
+      <a href="Categories.dc.html" style="text-decoration:none;color:#2B1D10;display:flex;flex-direction:column;gap:8px" style-hover="color:#C06A00"><div style="aspect-ratio:1;border-radius:14px;overflow:hidden"><image-slot id="home-cat-dryfruits" shape="rect" placeholder="Dry fruits photo"></image-slot></div><div style="line-height:1.2"><div style="font-weight:700;font-size:16px">Dry Fruits</div><div style="font-size:13px;color:#7A6A52">Kaju, badaam, kishmish…</div></div></a>
+      <a href="Categories.dc.html" style="text-decoration:none;color:#2B1D10;display:flex;flex-direction:column;gap:8px" style-hover="color:#C06A00"><div style="aspect-ratio:1;border-radius:14px;overflow:hidden"><image-slot id="home-cat-wholespices" shape="rect" placeholder="Whole spices photo"></image-slot></div><div style="line-height:1.2"><div style="font-weight:700;font-size:16px">Whole Spices</div><div style="font-size:13px;color:#7A6A52">Jeera, elaichi, kali mirch…</div></div></a>
+      <a href="Categories.dc.html" style="text-decoration:none;color:#2B1D10;display:flex;flex-direction:column;gap:8px" style-hover="color:#C06A00"><div style="aspect-ratio:1;border-radius:14px;overflow:hidden"><image-slot id="home-cat-powderspices" shape="rect" placeholder="Powder spices photo"></image-slot></div><div style="line-height:1.2"><div style="font-weight:700;font-size:16px">Powder Spices</div><div style="font-size:13px;color:#7A6A52">Haldi, mirchi, dhaniya…</div></div></a>
+      <a href="Categories.dc.html" style="text-decoration:none;color:#2B1D10;display:flex;flex-direction:column;gap:8px" style-hover="color:#C06A00"><div style="aspect-ratio:1;border-radius:14px;overflow:hidden"><image-slot id="home-cat-seeds" shape="rect" placeholder="Seeds photo"></image-slot></div><div style="line-height:1.2"><div style="font-weight:700;font-size:16px">Seeds</div><div style="font-size:13px;color:#7A6A52">Til, alsi, chia…</div></div></a>
+      <div style="aspect-ratio:1;border-radius:14px;background:#0A3E70;color:#F6EDD8;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;padding:12px"><div style="font-family:'Anek Devanagari',sans-serif;font-weight:800;font-size:26px;line-height:1.1">100+<br>SKUs</div><div style="font-size:12.5px;color:rgba(246,237,216,.7)">har category mein<br>alag grades</div></div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px;margin-top:30px">
+      <a href="{{ waLink }}" target="_blank" style="font-weight:700;font-size:16.5px;color:#083A6B;text-decoration:underline;text-underline-offset:5px;padding:10px 0" style-hover="color:#C06A00">Poori list WhatsApp par mangao →</a>
+      <div style="font-size:14.5px;color:#7A6A52">2 minute mein reply, seedha team se.</div>
+    </div>
+  </div>
+</div>
+
+<div data-screen-label="Proof" style="background:#F3E9D2;border-top:1px solid rgba(43,29,16,.07)">
+  <div style="max-width:1120px;margin:0 auto;padding:clamp(56px,8vw,90px) 20px">
+    <div style="display:flex;flex-wrap:wrap;gap:clamp(20px,4vw,44px)">
+      <div style="flex:1 1 150px;min-width:140px"><div style="font-family:'Anek Devanagari',sans-serif;font-weight:800;font-size:clamp(38px,5vw,56px);color:#C06A00;line-height:1">60+</div><div style="font-size:14.5px;font-weight:600;color:#4A3A28;margin-top:4px">saal agro trade mein<br>(3 peedhi, APMC Vashi)</div></div>
+      <div style="flex:1 1 150px;min-width:140px"><div style="font-family:'Anek Devanagari',sans-serif;font-weight:800;font-size:clamp(38px,5vw,56px);color:#C06A00;line-height:1">900+</div><div style="font-size:14.5px;font-weight:600;color:#4A3A28;margin-top:4px">kiraana stores<br>apne brand ke saath</div></div>
+      <div style="flex:1 1 150px;min-width:140px"><div style="font-family:'Anek Devanagari',sans-serif;font-weight:800;font-size:clamp(38px,5vw,56px);color:#C06A00;line-height:1">30 lakh+</div><div style="font-size:14.5px;font-weight:600;color:#4A3A28;margin-top:4px">branded pouches<br>deliver kiye</div></div>
+      <div style="flex:1 1 150px;min-width:140px"><div style="font-family:'Anek Devanagari',sans-serif;font-weight:800;font-size:clamp(38px,5vw,56px);color:#C06A00;line-height:1">100+</div><div style="font-size:14.5px;font-weight:600;color:#4A3A28;margin-top:4px">SKUs, MOQ<br>sirf 30 kg</div></div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:30px">
+      <div style="display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(11,81,146,.35);color:#0B5192;border-radius:999px;padding:9px 16px;font-weight:600;font-size:14px;background:rgba(255,253,246,.6)"><span style="width:8px;height:8px;border-radius:50%;background:#0B5192;display:inline-block"></span>FSSAI-compliant units — Vashi &amp; Goregaon</div>
+      <div style="display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(11,81,146,.35);color:#0B5192;border-radius:999px;padding:9px 16px;font-weight:600;font-size:14px;background:rgba(255,253,246,.6)"><span style="width:8px;height:8px;border-radius:50%;background:#C06A00;display:inline-block"></span>3rd-generation APMC parivaar</div>
+      <div style="display:inline-flex;align-items:center;gap:8px;border:1.5px solid rgba(11,81,146,.35);color:#0B5192;border-radius:999px;padding:9px 16px;font-weight:600;font-size:14px;background:rgba(255,253,246,.6)"><span style="width:8px;height:8px;border-radius:50%;background:#8E2F17;display:inline-block"></span>India ka 1st kiraana private labeller</div>
+    </div>
+    <h2 style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:clamp(26px,4vw,40px);line-height:1.12;color:#0B5192;margin:56px 0 0">Dukaandaar kya kehte hain</h2>
+    <div style="display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:24px 4px 14px;margin:0 -4px">
+      <div style="flex:0 0 min(360px,86vw);scroll-snap-align:start;background:#FFFDF6;border:1px solid rgba(43,29,16,.08);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:16px;box-shadow:0 10px 26px -18px rgba(43,29,16,.35)">
+        <div style="font-size:15.5px;line-height:1.65;color:#4A3A28;flex:1">"Branding ki taakat hum Aashirvaad aur India Gate ko dekh kar samjhe. One Kiraana ke saath hum <strong>apne terms pe</strong> business badha rahe hain — apna brand, aur packaging ka jhanjhat khatam."</div>
+        <div style="display:flex;align-items:center;gap:12px"><div style="width:46px;height:46px;border-radius:50%;background:#0B5192;color:#F6EDD8;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px">PS</div><div style="line-height:1.25"><div style="font-weight:700;font-size:15.5px">Prem Sirvi</div><div style="font-size:13.5px;color:#7A6A52">Ambika Stores</div></div></div>
+      </div>
+      <div style="flex:0 0 min(360px,86vw);scroll-snap-align:start;background:#FFFDF6;border:1px solid rgba(43,29,16,.08);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:16px;box-shadow:0 10px 26px -18px rgba(43,29,16,.35)">
+        <div style="font-size:15.5px;line-height:1.65;color:#4A3A28;flex:1">"Pehle 3 log din bhar packing karte the, 300 sq ft godown bhara rehta tha. Ab teeno delivery pe hain aur <strong>godown naye products ke liye khaali</strong>. Quality hamari choice ki, daam fair."</div>
+        <div style="display:flex;align-items:center;gap:12px"><div style="width:46px;height:46px;border-radius:50%;background:#C06A00;color:#FFFDF6;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px">NC</div><div style="line-height:1.25"><div style="font-weight:700;font-size:15.5px">Nayan Chheda</div><div style="font-size:13.5px;color:#7A6A52">Chheda Sales</div></div></div>
+      </div>
+      <div style="flex:0 0 min(360px,86vw);scroll-snap-align:start;background:#FFFDF6;border:1px solid rgba(43,29,16,.08);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:16px;box-shadow:0 10px 26px -18px rgba(43,29,16,.35)">
+        <div style="font-size:15.5px;line-height:1.65;color:#4A3A28;flex:1">"Prices pehle ke suppliers se <strong>10–20% kam</strong>. Order ke saath MRP bhejte hain, agle din delivery. Aisi customised service kisi company ne nahi di — maine aur retailers ko bhi recommend kiya."</div>
+        <div style="display:flex;align-items:center;gap:12px"><div style="width:46px;height:46px;border-radius:50%;background:#8E2F17;color:#FFFDF6;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px">RC</div><div style="line-height:1.25"><div style="font-weight:700;font-size:15.5px">Ramesh Choudhary</div><div style="font-size:13.5px;color:#7A6A52">M L Super Market</div></div></div>
+      </div>
+    </div>
+    <div style="font-size:13px;color:#9A8A6E">← swipe karke aur padho →</div>
+  </div>
+</div>
+
+<div data-screen-label="Founders" style="background:#FBF6EA">
+  <div style="max-width:1120px;margin:0 auto;padding:clamp(56px,8vw,90px) 20px">
+    <div style="font-weight:600;font-size:13px;letter-spacing:.14em;color:#C06A00">MANDI SE, AAPKE LIYE</div>
+    <h2 style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:clamp(30px,4.6vw,50px);line-height:1.12;color:#0B5192;margin:10px 0 0">Jo log iske peeche hain</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:16px;margin-top:34px">
+      <div style="flex:1 1 280px;min-width:260px;background:#FFFDF6;border:1px solid rgba(43,29,16,.08);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:center;gap:16px">
+          <div style="width:76px;height:76px;flex:none"><image-slot id="founder-bhavin" shape="circle" src="https://onekiraana.com/wp-content/uploads/2023/06/Bhavin-Soni.jpg" placeholder="Photo"></image-slot></div>
+          <div style="line-height:1.25"><div style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:21px;color:#0B5192">Bhavin Soni</div><div style="font-size:13.5px;font-weight:600;letter-spacing:.06em;color:#C06A00">FOUNDER</div></div>
+        </div>
+        <div style="font-size:15px;line-height:1.6;color:#4A3A28">3rd-gen APMC (Vashi) family business · 14+ saal agro &amp; private labelling · conscious capitalism &amp; agroecology mein vishwas.</div>
+      </div>
+      <div style="flex:1 1 280px;min-width:260px;background:#FFFDF6;border:1px solid rgba(43,29,16,.08);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:center;gap:16px">
+          <div style="width:76px;height:76px;flex:none"><image-slot id="founder-umang" shape="circle" src="https://onekiraana.com/wp-content/uploads/2023/06/Umang-Savla.jpg" placeholder="Photo"></image-slot></div>
+          <div style="line-height:1.25"><div style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:21px;color:#0B5192">Umang Savla</div><div style="font-size:13.5px;font-weight:600;letter-spacing:.06em;color:#C06A00">CO-FOUNDER</div></div>
+        </div>
+        <div style="font-size:15px;line-height:1.6;color:#4A3A28">Mumbai ki 60 saal purani grocery store ke maalik · serial entrepreneur · kiraana ki zaroorat andar se jaante hain.</div>
+      </div>
+      <div style="flex:1 1 280px;min-width:260px;background:#FFFDF6;border:1px solid rgba(43,29,16,.08);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:center;gap:16px">
+          <div style="width:76px;height:76px;flex:none"><image-slot id="founder-hemendra" shape="circle" src="https://onekiraana.com/wp-content/uploads/2024/09/Hemendra-Mathur-One-Kiraana-941x1024.jpeg" placeholder="Photo"></image-slot></div>
+          <div style="line-height:1.25"><div style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:21px;color:#0B5192">Hemendra Mathur</div><div style="font-size:13.5px;font-weight:600;letter-spacing:.06em;color:#C06A00">MENTOR</div></div>
+        </div>
+        <div style="font-size:15px;line-height:1.6;color:#4A3A28">Agritech VC · ThinkAg co-founder · IIM Ahmedabad · 25+ saal food &amp; agri sector mein.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div data-screen-label="Final CTA" id="shuru" style="background:#0A3E70;color:#F6EDD8">
+  <div style="max-width:1120px;margin:0 auto;padding:clamp(60px,9vw,100px) 20px;display:flex;flex-wrap:wrap;gap:44px;align-items:center">
+    <div style="flex:1 1 340px;min-width:290px">
+      <h2 style="font-family:'Anek Devanagari',sans-serif;font-weight:800;font-size:clamp(38px,6vw,66px);line-height:1.05;margin:0">Aaj hi apna brand shuru karo.</h2>
+      <div style="font-family:'Anek Devanagari',sans-serif;font-weight:600;font-size:clamp(20px,3vw,26px);color:#FF9100;margin-top:12px">Kisi aur ka brand kyun bechna?</div>
+      <a href="{{ waLink }}" target="_blank" style="display:inline-flex;align-items:center;gap:11px;background:#25D366;color:#072E54;font-weight:700;font-size:18px;padding:0 32px;height:58px;border-radius:999px;text-decoration:none;margin-top:28px" style-hover="background:#3FE07A;color:#072E54;transform:translateY(-1px)">
+        <svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="15" r="11" fill="#072E54"></circle><path d="M8 19.5 L5.5 27 L13 24.4 Z" fill="#072E54"></path><path d="M11.9 10.9c-1.4 1.3-1.2 3.4.4 5.6 1.5 2.1 3.4 3.6 5.6 4.4 2 .7 3.5 0 4.1-1.1" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round"></path></svg>
+        WhatsApp Karo
+      </a>
+      <div style="font-size:14px;color:rgba(246,237,216,.65);margin-top:14px">Ya call karo: <a href="{{ telLink }}" style="color:#FF9100;font-weight:600">click-to-call</a></div>
+    </div>
+    <form onSubmit="{{ sendLead }}" style="flex:1 1 320px;min-width:280px;background:rgba(246,237,216,.07);border:1px solid rgba(246,237,216,.16);border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:12px">
+      <div style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:20px">Ya details bhejo, hum message karenge</div>
+      <input value="{{ name }}" onChange="{{ setName }}" required placeholder="Aapka naam *" aria-label="Naam" style="background:#FBF6EA;border:none;border-radius:12px;padding:14px 16px;font-size:16px;font-family:'Mukta',sans-serif;color:#2B1D10;width:100%;box-sizing:border-box">
+      <input value="{{ store }}" onChange="{{ setStore }}" required placeholder="Dukaan ka naam *" aria-label="Dukaan ka naam" style="background:#FBF6EA;border:none;border-radius:12px;padding:14px 16px;font-size:16px;font-family:'Mukta',sans-serif;color:#2B1D10;width:100%;box-sizing:border-box">
+      <input value="{{ city }}" onChange="{{ setCity }}" placeholder="City" aria-label="City" style="background:#FBF6EA;border:none;border-radius:12px;padding:14px 16px;font-size:16px;font-family:'Mukta',sans-serif;color:#2B1D10;width:100%;box-sizing:border-box">
+      <input value="{{ phone }}" onChange="{{ setPhone }}" type="tel" placeholder="Phone number" aria-label="Phone" style="background:#FBF6EA;border:none;border-radius:12px;padding:14px 16px;font-size:16px;font-family:'Mukta',sans-serif;color:#2B1D10;width:100%;box-sizing:border-box">
+      <button type="submit" style="background:#FF9100;color:#2B1D10;border:none;border-radius:999px;height:54px;font-family:'Mukta',sans-serif;font-weight:700;font-size:17px;cursor:pointer;margin-top:4px" style-hover="background:#FFA733">WhatsApp par bhejo →</button>
+      <div style="font-size:12.5px;color:rgba(246,237,216,.55);text-align:center">Koi account nahi, koi spam nahi — message seedha team tak.</div>
+    </form>
+  </div>
+</div>
+
+<div data-screen-label="Footer" style="background:#072E54;color:#F6EDD8">
+  <div style="max-width:1120px;margin:0 auto;padding:54px 20px 40px;display:flex;flex-wrap:wrap;gap:36px">
+    <div style="flex:2 1 260px;min-width:250px">
+      <img src="https://onekiraana.com/wp-content/uploads/2023/06/Onekiraana-logo-white.png" alt="One Kiraana" style="height:44px;width:auto">
+      <div style="font-family:'Anek Devanagari',sans-serif;font-weight:600;font-size:17px;color:#FF9100;margin-top:12px">Kisi Aur Ka Brand Kyun Bechna?</div>
+      <div style="font-size:13.5px;color:rgba(246,237,216,.55);margin-top:6px">PRPM Services Pvt. Ltd.</div>
+      <div style="display:flex;gap:10px;margin-top:18px">
+        <a href="https://instagram.com/onekiraana" target="_blank" aria-label="Instagram" style="width:42px;height:42px;border:1px solid rgba(246,237,216,.3);border-radius:50%;display:flex;align-items:center;justify-content:center" style-hover="border-color:#FF9100"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="#F6EDD8" stroke-width="1.8"></rect><circle cx="12" cy="12" r="4" fill="none" stroke="#F6EDD8" stroke-width="1.8"></circle><circle cx="17.2" cy="6.8" r="1.3" fill="#F6EDD8"></circle></svg></a>
+        <a href="https://youtube.com/@OneKiraana" target="_blank" aria-label="YouTube" style="width:42px;height:42px;border:1px solid rgba(246,237,216,.3);border-radius:50%;display:flex;align-items:center;justify-content:center" style-hover="border-color:#FF9100"><svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4" fill="none" stroke="#F6EDD8" stroke-width="1.8"></rect><path d="M10.5 9.5 L15 12 L10.5 14.5 Z" fill="#F6EDD8"></path></svg></a>
+        <a href="https://www.linkedin.com/company/onekiraana/" target="_blank" aria-label="LinkedIn" style="width:42px;height:42px;border:1px solid rgba(246,237,216,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none" style-hover="border-color:#FF9100"><span style="font-weight:700;font-size:15px;color:#F6EDD8;font-family:'Mukta',sans-serif">in</span></a>
+      </div>
+    </div>
+    <div style="flex:1 1 150px;min-width:140px">
+      <div style="font-weight:600;font-size:12.5px;letter-spacing:.12em;color:rgba(246,237,216,.5)">MENU</div>
+      <div style="display:flex;flex-direction:column;gap:9px;margin-top:14px">
+        <a href="Home.dc.html" style="color:#F6EDD8;text-decoration:none;font-size:15px" style-hover="color:#FF9100">Home</a>
+        <a href="Categories.dc.html" style="color:#F6EDD8;text-decoration:none;font-size:15px" style-hover="color:#FF9100">Product Categories</a>
+        <a href="Process.dc.html" style="color:#F6EDD8;text-decoration:none;font-size:15px" style-hover="color:#FF9100">Our Process</a>
+        <a href="About.dc.html" style="color:#F6EDD8;text-decoration:none;font-size:15px" style-hover="color:#FF9100">About</a>
+        <a href="Contact.dc.html" style="color:#F6EDD8;text-decoration:none;font-size:15px" style-hover="color:#FF9100">Contact</a>
+      </div>
+    </div>
+    <div style="flex:1 1 240px;min-width:220px">
+      <div style="font-weight:600;font-size:12.5px;letter-spacing:.12em;color:rgba(246,237,216,.5)">ADDRESS</div>
+      <div style="font-size:14px;line-height:1.7;color:rgba(246,237,216,.8);margin-top:14px">N-24, APMC Market 2, Phase 2, Danabunder, Sector 19C, Vashi, Navi Mumbai – 400703</div>
+      <div style="font-weight:600;font-size:12.5px;letter-spacing:.12em;color:rgba(246,237,216,.5);margin-top:18px">CONTACT</div>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-top:12px">
+        <a href="mailto:sales@onekiraana.com" style="color:#F6EDD8;font-size:14.5px" style-hover="color:#FF9100">sales@onekiraana.com</a>
+        <a href="mailto:hr@onekiraana.com" style="color:#F6EDD8;font-size:14.5px" style-hover="color:#FF9100">hr@onekiraana.com</a>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(246,237,216,.12)">
+    <div style="max-width:1120px;margin:0 auto;padding:16px 20px;font-size:12.5px;color:rgba(246,237,216,.45)">© 2026 One Kiraana™ · PRPM Services Pvt. Ltd. · Banao Khudka Brand.</div>
+  </div>
+</div>
+
+<sc-if value="{{ floatingCta }}" hint-placeholder-val="{{ true }}">
+  <a href="{{ waLink }}" target="_blank" aria-label="WhatsApp Karo" title="WhatsApp Karo" style="position:fixed;right:18px;bottom:18px;z-index:90;width:62px;height:62px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px -6px rgba(15,37,23,.5);animation:okPulse 2.8s infinite" style-hover="transform:scale(1.06)">
+    <svg width="34" height="34" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="15" r="11" fill="#FFFFFF"></circle><path d="M8 19.5 L5.5 27 L13 24.4 Z" fill="#FFFFFF"></path><path d="M11.9 10.9c-1.4 1.3-1.2 3.4.4 5.6 1.5 2.1 3.4 3.6 5.6 4.4 2 .7 3.5 0 4.1-1.1" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round"></path></svg>
+  </a>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;whatsappNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;919999999999&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;WhatsApp (sab CTAs yahi number use karte hain)&quot;},&quot;waMessage&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Namaste One Kiraana! Apni dukaan ke naam ka brand shuru karna hai. Details bhejiye.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;WhatsApp (sab CTAs yahi number use karte hain)&quot;},&quot;floatingCta&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+class Component extends DCLogic {
+  state = { menuOpen: false, name: "", store: "", city: "", phone: "" };
+  renderVals() {
+    const num = String(this.props.whatsappNumber ?? "919999999999").replace(/[^0-9]/g, "");
+    const msg = this.props.waMessage ?? "Namaste One Kiraana! Apni dukaan ke naam ka brand shuru karna hai. Details bhejiye.";
+    const set = (k) => (e) => this.setState({ [k]: e.target.value });
+    return {
+      waLink: "https://wa.me/" + num + "?text=" + encodeURIComponent(msg),
+      telLink: "tel:+" + num,
+      floatingCta: this.props.floatingCta ?? true,
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      name: this.state.name, store: this.state.store, city: this.state.city, phone: this.state.phone,
+      setName: set("name"), setStore: set("store"), setCity: set("city"), setPhone: set("phone"),
+      sendLead: (e) => {
+        e.preventDefault();
+        const s = this.state;
+        const t = ["Namaste One Kiraana! Apna brand shuru karna hai.", "Naam: " + s.name, "Dukaan: " + s.store, s.city ? "City: " + s.city : "", s.phone ? "Phone: " + s.phone : ""].filter(Boolean).join("\n");
+        window.open("https://wa.me/" + num + "?text=" + encodeURIComponent(t), "_blank");
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

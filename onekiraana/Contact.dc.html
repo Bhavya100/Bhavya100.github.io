@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Contact — One Kiraana</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@500;600;700;800&family=Mukta:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FBF6EA;color:#2B1D10;font-family:'Mukta',sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#0B5192}a:hover{color:#C06A00}
+input::placeholder{color:#9A8A6E}
+@keyframes okPulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 18px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+@keyframes okFadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+
+<div data-screen-label="Nav" style="position:sticky;top:0;z-index:60;background:rgba(251,246,234,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(43,29,16,.1)">
+  <div style="max-width:1120px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:12px">
+    <button onClick="{{ toggleMenu }}" aria-label="Menu kholo" style="display:flex;flex-direction:column;justify-content:center;gap:5px;background:none;border:1px solid rgba(43,29,16,.2);border-radius:10px;padding:0 12px;height:46px;cursor:pointer">
+      <span style="display:block;width:20px;height:2px;background:#2B1D10"></span>
+      <span style="display:block;width:14px;height:2px;background:#2B1D10"></span>
+      <span style="display:block;width:20px;height:2px;background:#2B1D10"></span>
+    </button>
+    <a href="Home.dc.html" style="display:flex;align-items:center;text-decoration:none">
+      <img src="./assets/onekiraana-logo.png" alt="One Kiraana" style="height:44px;width:auto;display:block">
+    </a>
+    <div style="flex:1"></div>
+    <a href="{{ waLink }}" target="_blank" style="display:inline-flex;align-items:center;gap:9px;background:#0B5192;color:#FFFFFF;font-weight:700;font-size:15.5px;padding:0 20px;height:46px;border-radius:999px;text-decoration:none;white-space:nowrap" style-hover="background:#083A6B;color:#FFFFFF">
+      <svg width="19" height="19" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="15" r="11" fill="#FFFFFF"></circle><path d="M8 19.5 L5.5 27 L13 24.4 Z" fill="#FFFFFF"></path><path d="M11.9 10.9c-1.4 1.3-1.2 3.4.4 5.6 1.5 2.1 3.4 3.6 5.6 4.4 2 .7 3.5 0 4.1-1.1" fill="none" stroke="#0B5192" stroke-width="2.6" stroke-linecap="round"></path></svg>
+      WhatsApp Karo
+    </a>
+  </div>
+</div>
+
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;inset:0;z-index:100;background:#0A3E70;color:#F6EDD8;display:flex;flex-direction:column;padding:12px 22px 30px;overflow:auto;animation:okFadeUp .25s ease">
+    <div style="display:flex;align-items:center;gap:12px;padding-bottom:18px">
+      <img src="https://onekiraana.com/wp-content/uploads/2023/06/Onekiraana-logo-white.png" alt="One Kiraana" style="height:42px;width:auto">
+      <div style="flex:1"></div>
+      <button onClick="{{ closeMenu }}" aria-label="Band karo" style="background:none;border:1px solid rgba(246,237,216,.4);color:#F6EDD8;border-radius:10px;width:46px;height:46px;font-size:18px;cursor:pointer">✕</button>
+    </div>
+    <div style="display:flex;flex-direction:column;max-width:640px;width:100%;margin:0 auto">
+      <a href="Home.dc.html" style="display:flex;align-items:baseline;gap:14px;font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:clamp(30px,6vw,44px);color:#F6EDD8;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(246,237,216,.15)"><span style="font-size:14px;color:#FF9100;font-family:'Mukta',sans-serif;font-weight:600">01</span>Home</a>
+      <a href="Categories.dc.html" style="display:flex;align-items:baseline;gap:14px;font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:clamp(30px,6vw,44px);color:#F6EDD8;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(246,237,216,.15)"><span style="font-size:14px;color:#FF9100;font-family:'Mukta',sans-serif;font-weight:600">02</span>Product Categories</a>
+      <a href="Process.dc.html" style="display:flex;align-items:baseline;gap:14px;font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:clamp(30px,6vw,44px);color:#F6EDD8;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(246,237,216,.15)"><span style="font-size:14px;color:#FF9100;font-family:'Mukta',sans-serif;font-weight:600">03</span>Our Process</a>
+      <a href="About.dc.html" style="display:flex;align-items:baseline;gap:14px;font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:clamp(30px,6vw,44px);color:#F6EDD8;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(246,237,216,.15)"><span style="font-size:14px;color:#FF9100;font-family:'Mukta',sans-serif;font-weight:600">04</span>About</a>
+      <a href="Contact.dc.html" onClick="{{ closeMenu }}" style="display:flex;align-items:baseline;gap:14px;font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:clamp(30px,6vw,44px);color:#FF9100;text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(246,237,216,.15)"><span style="font-size:14px;color:#FF9100;font-family:'Mukta',sans-serif;font-weight:600">05</span>Contact</a>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:26px">
+        <a href="{{ waLink }}" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:#25D366;color:#072E54;font-weight:700;font-size:16px;padding:0 24px;height:52px;border-radius:999px;text-decoration:none" style-hover="background:#3FE07A;color:#072E54">WhatsApp Karo</a>
+        <a href="{{ telLink }}" style="display:inline-flex;align-items:center;gap:10px;background:none;border:1.5px solid rgba(246,237,216,.5);color:#F6EDD8;font-weight:700;font-size:16px;padding:0 24px;height:52px;border-radius:999px;text-decoration:none" style-hover="border-color:#FF9100;color:#FF9100">Call Karo</a>
+      </div>
+      <div style="margin-top:30px;font-size:13.5px;line-height:1.7;color:rgba(246,237,216,.6)">N-24, APMC Market 2, Phase 2, Danabunder, Sector 19C, Vashi, Navi Mumbai – 400703<br>sales@onekiraana.com · hr@onekiraana.com</div>
+    </div>
+  </div>
+</sc-if>
+
+<div data-screen-label="Contact header" style="background:linear-gradient(180deg,#FBF6EA,#F5EBD4);border-bottom:1px solid rgba(43,29,16,.08)">
+  <div style="max-width:1120px;margin:0 auto;padding:clamp(44px,7vw,76px) 20px">
+    <div style="font-weight:600;font-size:13px;letter-spacing:.14em;color:#C06A00">CONTACT</div>
+    <h1 style="font-family:'Anek Devanagari',sans-serif;font-weight:800;font-size:clamp(38px,7vw,72px);line-height:1.05;color:#0B5192;margin:12px 0 0">Baat karte hain.</h1>
+    <p style="font-size:17px;line-height:1.65;color:#4A3A28;max-width:56ch;margin:16px 0 0">Sabse tez raasta WhatsApp hai — 2 minute mein reply. Call, email ya visit bhi kar sakte ho.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:24px">
+      <a href="{{ waLink }}" target="_blank" style="display:inline-flex;align-items:center;gap:11px;background:#0B5192;color:#FFFFFF;font-weight:700;font-size:17px;padding:0 28px;height:54px;border-radius:999px;text-decoration:none" style-hover="background:#083A6B;color:#FFFFFF">
+        <svg width="21" height="21" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="15" r="11" fill="#FFFFFF"></circle><path d="M8 19.5 L5.5 27 L13 24.4 Z" fill="#FFFFFF"></path><path d="M11.9 10.9c-1.4 1.3-1.2 3.4.4 5.6 1.5 2.1 3.4 3.6 5.6 4.4 2 .7 3.5 0 4.1-1.1" fill="none" stroke="#0B5192" stroke-width="2.6" stroke-linecap="round"></path></svg>
+        WhatsApp Karo
+      </a>
+      <a href="{{ telLink }}" style="display:inline-flex;align-items:center;gap:10px;background:none;border:2px solid #0B5192;color:#0B5192;font-weight:700;font-size:17px;padding:0 28px;height:54px;border-radius:999px;text-decoration:none" style-hover="background:#0B5192;color:#F6EDD8">Call Karo</a>
+    </div>
+  </div>
+</div>
+
+<div data-screen-label="Contact details" style="background:#FBF6EA">
+  <div style="max-width:1120px;margin:0 auto;padding:clamp(44px,6vw,70px) 20px;display:flex;flex-wrap:wrap;gap:16px">
+    <div style="flex:1 1 280px;min-width:260px;background:#FFFDF6;border:1px solid rgba(43,29,16,.08);border-radius:18px;padding:26px">
+      <div style="font-weight:600;font-size:12.5px;letter-spacing:.12em;color:#C06A00">REGISTERED ADDRESS</div>
+      <div style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:19px;color:#0B5192;margin-top:8px">APMC Market, Vashi</div>
+      <div style="font-size:15px;line-height:1.7;color:#4A3A28;margin-top:6px">N-24, APMC Market 2, Phase 2, Danabunder, Sector 19C, Vashi, Navi Mumbai – 400703</div>
+    </div>
+    <div style="flex:1 1 280px;min-width:260px;background:#FFFDF6;border:1px solid rgba(43,29,16,.08);border-radius:18px;padding:26px">
+      <div style="font-weight:600;font-size:12.5px;letter-spacing:.12em;color:#C06A00">PROCESSING UNIT</div>
+      <div style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:19px;color:#0B5192;margin-top:8px">Goregaon (W), Mumbai</div>
+      <div style="font-size:15px;line-height:1.7;color:#4A3A28;margin-top:6px">G-25, Ground Floor, Sidhpura Industrial Estate, Gaiwadi Road, SV Road, Goregaon (W), Mumbai – 400053</div>
+    </div>
+    <div style="flex:1 1 280px;min-width:260px;background:#FFFDF6;border:1px solid rgba(43,29,16,.08);border-radius:18px;padding:26px">
+      <div style="font-weight:600;font-size:12.5px;letter-spacing:.12em;color:#C06A00">EMAIL</div>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px">
+        <a href="mailto:sales@onekiraana.com" style="font-weight:600;font-size:16px;color:#0B5192">sales@onekiraana.com</a>
+        <div style="font-size:13.5px;color:#7A6A52;margin-top:-4px">Sales enquiry ke liye</div>
+        <a href="mailto:hr@onekiraana.com" style="font-weight:600;font-size:16px;color:#0B5192">hr@onekiraana.com</a>
+        <div style="font-size:13.5px;color:#7A6A52;margin-top:-4px">Career ke liye</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div data-screen-label="Map and form" style="background:#F3E9D2;border-top:1px solid rgba(43,29,16,.07)">
+  <div style="max-width:1120px;margin:0 auto;padding:clamp(48px,7vw,76px) 20px;display:flex;flex-wrap:wrap;gap:28px;align-items:stretch">
+    <div style="flex:1.2 1 340px;min-width:290px;display:flex;flex-direction:column;gap:10px">
+      <div style="border-radius:20px;overflow:hidden;border:1px solid rgba(43,29,16,.12);flex:1;min-height:340px">
+        <iframe src="https://maps.google.com/maps?q=G%2025%2CThe%20Sidhpura%20Industrial%20Estate%20Gaiwadi%2C%20Swami%20Vivekananda%20Rd%2C%20Goregaon%20West%2C%20Mumbai%2C%20Maharashtra%20400062&amp;t=m&amp;z=16&amp;output=embed&amp;iwloc=near" title="One Kiraana unit map" style="border:0;width:100%;height:100%;min-height:340px;display:block" loading="lazy"></iframe>
+      </div>
+      <div style="font-size:13.5px;color:#7A6A52">Goregaon unit — visit se pehle WhatsApp pe time fix kar lo.</div>
+    </div>
+    <form onSubmit="{{ sendLead }}" style="flex:1 1 320px;min-width:280px;background:#0A3E70;color:#F6EDD8;border-radius:20px;padding:28px;display:flex;flex-direction:column;gap:12px">
+      <div style="font-family:'Anek Devanagari',sans-serif;font-weight:700;font-size:22px">Details bhejo, hum message karenge</div>
+      <div style="font-size:14px;color:rgba(246,237,216,.65);margin-top:-6px">4 fields, 30 second — koi account nahi.</div>
+      <input value="{{ name }}" onChange="{{ setName }}" required placeholder="Aapka naam *" aria-label="Naam" style="background:#FBF6EA;border:none;border-radius:12px;padding:14px 16px;font-size:16px;font-family:'Mukta',sans-serif;color:#2B1D10;width:100%;box-sizing:border-box">
+      <input value="{{ store }}" onChange="{{ setStore }}" required placeholder="Dukaan ka naam *" aria-label="Dukaan ka naam" style="background:#FBF6EA;border:none;border-radius:12px;padding:14px 16px;font-size:16px;font-family:'Mukta',sans-serif;color:#2B1D10;width:100%;box-sizing:border-box">
+      <input value="{{ city }}" onChange="{{ setCity }}" placeholder="City" aria-label="City" style="background:#FBF6EA;border:none;border-radius:12px;padding:14px 16px;font-size:16px;font-family:'Mukta',sans-serif;color:#2B1D10;width:100%;box-sizing:border-box">
+      <input value="{{ phone }}" onChange="{{ setPhone }}" type="tel" placeholder="Phone number" aria-label="Phone" style="background:#FBF6EA;border:none;border-radius:12px;padding:14px 16px;font-size:16px;font-family:'Mukta',sans-serif;color:#2B1D10;width:100%;box-sizing:border-box">
+      <button type="submit" style="background:#FF9100;color:#2B1D10;border:none;border-radius:999px;height:54px;font-family:'Mukta',sans-serif;font-weight:700;font-size:17px;cursor:pointer;margin-top:4px" style-hover="background:#FFA733">WhatsApp par bhejo →</button>
+      <div style="font-size:12.5px;color:rgba(246,237,216,.55);text-align:center">Message seedha team tak jaata hai — spam kabhi nahi.</div>
+    </form>
+  </div>
+</div>
+
+<div data-screen-label="Footer" style="background:#072E54;color:#F6EDD8">
+  <div style="max-width:1120px;margin:0 auto;padding:54px 20px 40px;display:flex;flex-wrap:wrap;gap:36px">
+    <div style="flex:2 1 260px;min-width:250px">
+      <img src="https://onekiraana.com/wp-content/uploads/2023/06/Onekiraana-logo-white.png" alt="One Kiraana" style="height:44px;width:auto">
+      <div style="font-family:'Anek Devanagari',sans-serif;font-weight:600;font-size:17px;color:#FF9100;margin-top:12px">Kisi Aur Ka Brand Kyun Bechna?</div>
+      <div style="font-size:13.5px;color:rgba(246,237,216,.55);margin-top:6px">PRPM Services Pvt. Ltd.</div>
+      <div style="display:flex;gap:10px;margin-top:18px">
+        <a href="https://instagram.com/onekiraana" target="_blank" aria-label="Instagram" style="width:42px;height:42px;border:1px solid rgba(246,237,216,.3);border-radius:50%;display:flex;align-items:center;justify-content:center" style-hover="border-color:#FF9100"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="#F6EDD8" stroke-width="1.8"></rect><circle cx="12" cy="12" r="4" fill="none" stroke="#F6EDD8" stroke-width="1.8"></circle><circle cx="17.2" cy="6.8" r="1.3" fill="#F6EDD8"></circle></svg></a>
+        <a href="https://youtube.com/@OneKiraana" target="_blank" aria-label="YouTube" style="width:42px;height:42px;border:1px solid rgba(246,237,216,.3);border-radius:50%;display:flex;align-items:center;justify-content:center" style-hover="border-color:#FF9100"><svg width="19" height="19" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4" fill="none" stroke="#F6EDD8" stroke-width="1.8"></rect><path d="M10.5 9.5 L15 12 L10.5 14.5 Z" fill="#F6EDD8"></path></svg></a>
+        <a href="https://www.linkedin.com/company/onekiraana/" target="_blank" aria-label="LinkedIn" style="width:42px;height:42px;border:1px solid rgba(246,237,216,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none" style-hover="border-color:#FF9100"><span style="font-weight:700;font-size:15px;color:#F6EDD8;font-family:'Mukta',sans-serif">in</span></a>
+      </div>
+    </div>
+    <div style="flex:1 1 150px;min-width:140px">
+      <div style="font-weight:600;font-size:12.5px;letter-spacing:.12em;color:rgba(246,237,216,.5)">MENU</div>
+      <div style="display:flex;flex-direction:column;gap:9px;margin-top:14px">
+        <a href="Home.dc.html" style="color:#F6EDD8;text-decoration:none;font-size:15px" style-hover="color:#FF9100">Home</a>
+        <a href="Categories.dc.html" style="color:#F6EDD8;text-decoration:none;font-size:15px" style-hover="color:#FF9100">Product Categories</a>
+        <a href="Process.dc.html" style="color:#F6EDD8;text-decoration:none;font-size:15px" style-hover="color:#FF9100">Our Process</a>
+        <a href="About.dc.html" style="color:#F6EDD8;text-decoration:none;font-size:15px" style-hover="color:#FF9100">About</a>
+        <a href="Contact.dc.html" style="color:#F6EDD8;text-decoration:none;font-size:15px" style-hover="color:#FF9100">Contact</a>
+      </div>
+    </div>
+    <div style="flex:1 1 240px;min-width:220px">
+      <div style="font-weight:600;font-size:12.5px;letter-spacing:.12em;color:rgba(246,237,216,.5)">ADDRESS</div>
+      <div style="font-size:14px;line-height:1.7;color:rgba(246,237,216,.8);margin-top:14px">N-24, APMC Market 2, Phase 2, Danabunder, Sector 19C, Vashi, Navi Mumbai – 400703</div>
+      <div style="font-weight:600;font-size:12.5px;letter-spacing:.12em;color:rgba(246,237,216,.5);margin-top:18px">CONTACT</div>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-top:12px">
+        <a href="mailto:sales@onekiraana.com" style="color:#F6EDD8;font-size:14.5px" style-hover="color:#FF9100">sales@onekiraana.com</a>
+        <a href="mailto:hr@onekiraana.com" style="color:#F6EDD8;font-size:14.5px" style-hover="color:#FF9100">hr@onekiraana.com</a>
+      </div>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(246,237,216,.12)">
+    <div style="max-width:1120px;margin:0 auto;padding:16px 20px;font-size:12.5px;color:rgba(246,237,216,.45)">© 2026 One Kiraana™ · PRPM Services Pvt. Ltd. · Banao Khudka Brand.</div>
+  </div>
+</div>
+
+<sc-if value="{{ floatingCta }}" hint-placeholder-val="{{ true }}">
+  <a href="{{ waLink }}" target="_blank" aria-label="WhatsApp Karo" title="WhatsApp Karo" style="position:fixed;right:18px;bottom:18px;z-index:90;width:62px;height:62px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px -6px rgba(15,37,23,.5);animation:okPulse 2.8s infinite" style-hover="transform:scale(1.06)">
+    <svg width="34" height="34" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="15" r="11" fill="#FFFFFF"></circle><path d="M8 19.5 L5.5 27 L13 24.4 Z" fill="#FFFFFF"></path><path d="M11.9 10.9c-1.4 1.3-1.2 3.4.4 5.6 1.5 2.1 3.4 3.6 5.6 4.4 2 .7 3.5 0 4.1-1.1" fill="none" stroke="#25D366" stroke-width="2.6" stroke-linecap="round"></path></svg>
+  </a>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;whatsappNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;919999999999&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;WhatsApp&quot;},&quot;waMessage&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Namaste One Kiraana! Apni dukaan ke naam ka brand shuru karna hai. Details bhejiye.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;WhatsApp&quot;},&quot;floatingCta&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Layout&quot;}}">
+class Component extends DCLogic {
+  state = { menuOpen: false, name: "", store: "", city: "", phone: "" };
+  renderVals() {
+    const num = String(this.props.whatsappNumber ?? "919999999999").replace(/[^0-9]/g, "");
+    const msg = this.props.waMessage ?? "Namaste One Kiraana! Apni dukaan ke naam ka brand shuru karna hai. Details bhejiye.";
+    const set = (k) => (e) => this.setState({ [k]: e.target.value });
+    return {
+      waLink: "https://wa.me/" + num + "?text=" + encodeURIComponent(msg),
+      telLink: "tel:+" + num,
+      floatingCta: this.props.floatingCta ?? true,
+      menuOpen: this.state.menuOpen,
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      name: this.state.name, store: this.state.store, city: this.state.city, phone: this.state.phone,
+      setName: set("name"), setStore: set("store"), setCity: set("city"), setPhone: set("phone"),
+      sendLead: (e) => {
+        e.preventDefault();
+        const s = this.state;
+        const t = ["Namaste One Kiraana! Apna brand shuru karna hai.", "Naam: " + s.name, "Dukaan: " + s.store, s.city ? "City: " + s.city : "", s.phone ? "Phone: " + s.phone : ""].filter(Boolean).join("\n");
+        window.open("https://wa.me/" + num + "?text=" + encodeURIComponent(t), "_blank");
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
